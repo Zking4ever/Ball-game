@@ -2,7 +2,7 @@ var container = document.getElementsByClassName('container')[0];
 var ball = document.getElementById('ball');
 //when clicked make the ball able to jump
 container.addEventListener('click',async function(){
-    ball.style.transform = "translateY(-50px)";
+    ball.style.transform = "translateY(-100px)";
     await new Promise(resolve=>setTimeout(resolve,500));
     ball.style.transform = "translateY(0px)";
 });
@@ -21,7 +21,7 @@ function createObstacle(){
     var obstacle = document.getElementsByClassName('box');
 async function move(){
         var rect = obstacle[0].getBoundingClientRect();
-        obstacle[0].style.left ='280px';
+        obstacle[0].style.left ='-80px';
         await new Promise(resolve=>setTimeout(resolve,2000));
         disapper();
 }
