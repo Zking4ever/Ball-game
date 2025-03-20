@@ -11,12 +11,11 @@ container.addEventListener('click',async function(){
 
 //now lets create a random div for the game
 var gameArea =document.getElementsByClassName('dynamic_part')[0];
-for(var i=1; i<5;i++){
- var box =document.createElement('div');
- box.className="box";
- var j =(i%5);
- box.setAttribute('style','--i:'+j);
- gameArea.appendChild(box);
+function createObstacle(){
+    var box = document.createElement('div');
+    box.className ="box";
+    gameArea.appendChild(box);
+    move();
 }
 //make the obstacles run and disapper
     var obstacle = document.getElementsByClassName('box');
@@ -32,6 +31,10 @@ function disapper(){
                 if(parseInt(obstacle[i].style.left)<290){
                     var parent = obstacle[i].parentElement;
                     parent.removeChild(obstacle[i]);
+                    createObstacle();
                 }
-        }
+            }
+}
+for(var i=0;i<1;i++){
+    move();
 }
