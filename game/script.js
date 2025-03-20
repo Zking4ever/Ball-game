@@ -6,7 +6,9 @@ container.addEventListener('click',async function(){
     await new Promise(resolve=>setTimeout(resolve,500));
     ball.style.transform = "translateY(0px)";
 });
-//cont.style.backgroundColor ="green";
+
+
+
 //now lets create a random div for the game
 var gameArea =document.getElementsByClassName('dynamic_part')[0];
 for(var i=1; i<5;i++){
@@ -16,8 +18,20 @@ for(var i=1; i<5;i++){
  box.setAttribute('style','--i:'+j);
  gameArea.appendChild(box);
 }
-function move(){
-    var obstacle = document.getElementsByClassName['box'];
-    var rect = obstacle[0].boundingClientRect;
-    alert(rect);
+//make the obstacles run and disapper
+    var obstacle = document.getElementsByClassName('box');
+async function move(){
+        var rect = obstacle[0].getBoundingClientRect();
+        obstacle[0].style.left ='280px';
+        await new Promise(resolve=>setTimeout(resolve,2000));
+        disapper();
+}
+function disapper(){
+        for(var i=0; i<obstacle.length;i++){
+
+                if(parseInt(obstacle[i].style.left)<290){
+                    var parent = obstacle[i].parentElement;
+                    parent.removeChild(obstacle[i]);
+                }
+        }
 }
