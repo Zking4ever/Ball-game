@@ -8,6 +8,7 @@ var ball = document.getElementById('ball');
 var obstacle =document.getElementsByClassName('box');
 var gameover = document.getElementById('gameover');
 var playingArea =document.getElementsByClassName('dynamic_part')[0];
+var ScoredResult = document.getElementsByClassName('scoreResult');
 
 body.addEventListener('click',async function(){
     ball.style.transform ="translateY(-120px)";
@@ -26,6 +27,7 @@ function placeBallRight(){
 setInterval(placeBallRight,1000);
 move();
 var over=0;
+var score=0;
  async function move(){
 
             for(var i=(-40);i<1210;i=i+100){
@@ -38,6 +40,7 @@ var over=0;
                 if(i>1100){
                     destroyOldObstacle();
                     createObstacle();
+                    score++;
                     count();
                 }
             }
@@ -47,7 +50,7 @@ var over=0;
 var ball_style = window.getComputedStyle(ball);
 function collision(e){
     ball_right = parseInt(ball_style.right);
-    obstacle_right = e+50;
+    obstacle_right = e-50;
     if(ball_right==obstacle_right){
         gameover.style.display ="flex";
         over =1;
@@ -57,12 +60,15 @@ function createObstacle(){
         var box=document.createElement('div');
         box.className="box";
         playingArea.appendChild(box);
-       // move();
+        move();
     
 }
 function destroyOldObstacle(){
     playingArea.removeChild(obstacle[0]);
 }
 function count(){
-
+        for(var i=0;i<ScoredResult.length;i++){
+            ScoredResult[i].innerHTML = score;
+        }
+    
 }

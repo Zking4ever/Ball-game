@@ -26,6 +26,7 @@ body{
     border: solid thin;
     border-radius: 7px;
     width: 150px;
+    display: flex;
     color: black;
 }
 .dynamic_part{
