@@ -52,10 +52,19 @@ body{
     border-radius: 50%;
     position: absolute;
     right: -70px;
-    transition: all 0.1s ease;
+    transition: all 0.5s ease;
 }
-@keyframes boxmove {
-    100%{
-        transform: translate(-1000px,calc(var(--i)*10px));
-    }
+#gameover{
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    border: solid;
+    border-radius: 10px;
+    background-color: azure;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }

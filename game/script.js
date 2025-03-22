@@ -6,11 +6,14 @@ function delay(ms){
 var body = document.getElementsByTagName('body')[0];
 var ball = document.getElementById('ball');
 var obstacle =document.getElementsByClassName('box');
+var gameover = document.getElementById('gameover');
 
 body.addEventListener('click',async function(){
     ball.style.transform ="translateY(-120px)";
+    ball.style.right ="905px";
     await delay(500);
     ball.style.transform ="translateY(0px)"; 
+    ball.style.right ="910px";
 });
 
 
@@ -33,9 +36,8 @@ function collision(e){
     ball_right = parseInt(ball_style.right);
     obstacle_right = e+50;
     if(ball_right==obstacle_right){
-        console.log('reached'); 
+        gameover.style.display ="flex";
         over =1;
     }
         
-    
 }
