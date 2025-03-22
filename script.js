@@ -14,6 +14,7 @@ function start(){
     wraper[1].style.display ="none";
     wraper[2].style.display ="none";
     wraper[3].style.display ="none";
+    document.getElementsByClassName('footer')[0].style.opacity ="100";
     move();
 }
 function exit(){
@@ -21,6 +22,7 @@ function exit(){
     wraper[0].style.display ="none";
     wraper[2].style.display ="none";
     wraper[3].style.display ="none";
+    document.getElementsByClassName('footer')[0].style.opacity ="100";
 
 }
 function abt(){
