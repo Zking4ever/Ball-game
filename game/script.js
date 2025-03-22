@@ -3,14 +3,14 @@ function delay(ms){
 }
 
 
-var body = document.getElementsByTagName('body')[0];
+var wraper = document.getElementsByClassName('wraper')[0];
 var ball = document.getElementById('ball');
 var obstacle =document.getElementsByClassName('box');
-var gameover = document.getElementById('gameover');
+var gameover = document.getElementsByClassName('wraper2')[0];
 var playingArea =document.getElementsByClassName('dynamic_part')[0];
 var ScoredResult = document.getElementsByClassName('scoreResult');
 
-body.addEventListener('click',async function(){
+wraper.addEventListener('click',async function(){
     ball.style.transform ="translateY(-120px)";
     ball.style.right ="880px";
     await delay(500);

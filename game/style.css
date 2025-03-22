@@ -11,6 +11,16 @@ body{
     background-color: black;
     color: white;
 }
+.wraper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backdrop-filter: blur(20px);
+}
 .container{
     width: 1000px;
     height: 600px;
@@ -35,6 +45,7 @@ body{
     display: flex;
     align-items: end;
     position: relative;
+    overflow: hidden;
 }
 #ball{
     background-color: aqua;
@@ -59,12 +70,48 @@ body{
     width: 500px;
     height: 350px;
     position: absolute;
-    border: solid;
+    border: solid white;
     border-radius: 10px;
-    background-color: azure;
-    color: black;
+    background-color: rgb(3, 3, 3);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: none;
+}
+.scorebox{
+    display: flex;
+    width: 200px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border: solid thin;
+}
+.btns{
+    display: flex;
+    gap: 50px;
+}
+button {
+    padding: 10px 40px;
+}
+.about{
+    width: 500px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.wraper p{
+    width: ;
+}
+.socials{
+    display: flex;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 20px;
+    width: 70%;
+    height: 40px;
 }
