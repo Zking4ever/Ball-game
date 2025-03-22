@@ -12,8 +12,8 @@ body{
     color: white;
 }
 .container{
-    width: 50%;
-    height: 40%;
+    width: 800px;
+    height: 450px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -30,12 +30,11 @@ body{
 }
 .dynamic_part{
     width: 100%;
-    height: 40%;
+    height: 45%;
     display: flex;
     align-items: end;
     gap: 10px;
     position: relative;
-    overflow: hidden;
 }
 #ball{
     background-color: aqua;
