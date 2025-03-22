@@ -120,3 +120,14 @@ button {
     width: 70%;
     height: 40px;
 }
+.socials a{
+    transition: all 1s ease;
+}
+.socials a:hover{
+    transform: translateY(-7px);
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    transition: all 1s ease;
+}

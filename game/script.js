@@ -28,7 +28,9 @@ function abt(){
     wraper[0].style.display ="none";
     wraper[1].style.display ="none";
     wraper[2].style.display ="none";
-}function restart(){
+    document.getElementsByClassName('footer')[0].style.opacity ="0";
+}
+function restart(){
     obstacle[0].style.right ="-70px";
     start();
     
@@ -55,7 +57,7 @@ var score=0;
 
             for(var i=(-40);i<1210;i=i+100){
                 await delay(1000);
-                obstacle[0].style.right = i+"px";
+                obstacle[0].style.right = i +"px";
                 collision(i);
                 if(over==1){
                     break;
@@ -78,6 +80,7 @@ function collision(e){
         wraper[2].style.display ="flex";
         over =1;
     }        
+    obstacle_right=0;
 }
 function createObstacle(){
         var box=document.createElement('div');
