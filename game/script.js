@@ -3,14 +3,37 @@ function delay(ms){
 }
 
 
-var wraper = document.getElementsByClassName('wraper')[0];
+var wraper = document.getElementsByClassName('wraper');
 var ball = document.getElementById('ball');
 var obstacle =document.getElementsByClassName('box');
 var gameover = document.getElementsByClassName('wraper2')[0];
 var playingArea =document.getElementsByClassName('dynamic_part')[0];
 var ScoredResult = document.getElementsByClassName('scoreResult');
+function start(){
+    wraper[0].style.display ="flex";
+    wraper[1].style.display ="none";
+    wraper[2].style.display ="none";
+    wraper[3].style.display ="none";
+    move();
+}
+function exit(){
+    wraper[1].style.display ="flex";
+    wraper[0].style.display ="none";
+    wraper[2].style.display ="none";
+    wraper[3].style.display ="none";
 
-wraper.addEventListener('click',async function(){
+}
+function abt(){
+    wraper[3].style.display ="flex";
+    wraper[0].style.display ="none";
+    wraper[1].style.display ="none";
+    wraper[2].style.display ="none";
+}function restart(){
+    obstacle[0].style.right ="-70px";
+    start();
+    
+}
+wraper[0].addEventListener('click',async function(){
     ball.style.transform ="translateY(-120px)";
     ball.style.right ="880px";
     await delay(500);
@@ -25,7 +48,7 @@ function placeBallRight(){
     }
 }
 setInterval(placeBallRight,1000);
-move();
+
 var over=0;
 var score=0;
  async function move(){
@@ -52,7 +75,7 @@ function collision(e){
     ball_right = parseInt(ball_style.right);
     obstacle_right = e-50;
     if(ball_right==obstacle_right){
-        gameover.style.display ="flex";
+        wraper[2].style.display ="flex";
         over =1;
     }        
 }

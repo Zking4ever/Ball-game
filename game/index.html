@@ -19,11 +19,11 @@
             </div>
         </div>
 </div>
-<div class="wraper" id="wraper1" >
+<div class="wraper" id="wraper1" style="display: flex;">
         <h1>Welcome to ... Game</h1>
         <div class="btns">
-            <button>Start</button>
-            <button>About</button>
+            <button onclick="start()">Start</button>
+            <button onclick="abt()">About</button>
         </div>
     </div>
 </div>
@@ -34,13 +34,14 @@
             <h2>Score:</h2><h2 class="scoreResult"></h2>
         </div>
         <div class="btns">
-            <button>Restart</button>
-            <button>Exit</button>
+            <button onclick="restart()">Restart</button>
+            <button onclick="exit()">Exit</button>
         </div>
     </div>
 </div>
 <div class="wraper" id="wraper3">
     <div class="about">
+           <div style="width: 100%;"> <span class="back" onclick="exit()">back</span></div>
         <h1>About</h1>
         <p>Play the game rescuing the ball from the arrow which will make the ball brust. Click the screen to jump over the arrow but should give attention 
             about the timming.
